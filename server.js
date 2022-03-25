@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+const cors = require('cors')
 
 const mongoose = require('mongoose')
 const mongoURI = 'mongodb://localhost:27017/' + 'SAGVouchers'
@@ -23,49 +24,14 @@ PORT = process.env.PORT
 
 // middleware
 app.use(express.json())
+app.use(cors())
 
-// Index
+// controller
+const voucherController = require('./controllers/voucher')
+app.use('/vouchers', voucherController)
+
 app.get('/', (req, res) => {
-  Voucher.find({}, (err, allVouchers) => {
-    res.json(allVouchers)
-  })
-})
-
-// New
-app.get('/new', (req, res) => {
-  res.send('Route for initiating a new voucher')
-})
-
-// Edit
-app.get('/edit/:id', (req, res) => {
-  res.send(`Route for showing edit page for voucher id# ${req.params.id}`)
-})
-
-// Create
-app.post('/', (req, res) => {
-  Voucher.create(req.body, (err, createdVoucher) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(createdVoucher);
-    }
-  })
-  res.redirect('/')
-})
-
-// Update
-app.put('/edit/:id', (req, res) => {
-  res.send(`Route for posting edits to voucher id# ${req.params.id} with data: ${JSON.stringify(req.body)}`)
-})
-
-// Delete
-app.delete('/:id', (req, res) => {
-  res.send(`Route for deleting voucher id# ${req.params.id}`)
-})
-
-// Show
-app.get('/:id', (req, res) => {
-  res.send(`Route for showing voucher id# ${req.params.id}`)
+  res.redirect('/vouchers')
 })
 
 app.listen(PORT, () => {

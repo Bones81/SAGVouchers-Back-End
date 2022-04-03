@@ -14,6 +14,9 @@ mongoose.connect(mongoURI, () => {
 	console.log('the connection with mongod is established')
 })
 
+// drop collection, if necessary
+// db.dropCollection
+
 // Connection Error/Success
 db.on('error', (err) => console.log(err.message + ' is mongod not running?'))
 db.on('connected', () => console.log('mongo connected: ', mongoURI))

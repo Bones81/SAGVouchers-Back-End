@@ -2,8 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const voucherSchema = new Schema({
+  _id: Number,
   actorName: String,
   prodName: String,
+  date: String,
   bgType: String,
   wetPay: Boolean,
   smokePay: Boolean,
@@ -37,6 +39,8 @@ const voucherSchema = new Schema({
   otherBumps: Number,
   mileage: Number,
   tolls: Number,
+  hrsWorked: Number,
+  totalPay: Number
 }, {timestamps: true})
 
 const Voucher = mongoose.model('voucher', voucherSchema)

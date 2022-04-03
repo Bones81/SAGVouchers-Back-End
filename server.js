@@ -2,12 +2,15 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 const cors = require('cors')
-
 const mongoose = require('mongoose')
-const mongoURI = 'mongodb://localhost:27017/' + 'SAGVouchers'
 const db = mongoose.connection
 
-const Voucher = require('./models/voucher')
+// config
+PORT = process.env.PORT
+
+// how to connect to db either via heroku or locally
+const mongoURI = process.env.MONGODB_URI
+
 
 // db connect
 mongoose.connect(mongoURI, () => {
@@ -21,9 +24,6 @@ mongoose.connect(mongoURI, () => {
 db.on('error', (err) => console.log(err.message + ' is mongod not running?'))
 db.on('connected', () => console.log('mongo connected: ', mongoURI))
 db.on('disconnected', () => console.log('mongo disconnected'))
-
-// config
-PORT = process.env.PORT
 
 // middleware
 app.use(express.json())

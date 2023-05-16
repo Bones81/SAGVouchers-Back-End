@@ -27,6 +27,7 @@ Currently, users can perform full CRUD (create, read, update, delete) functions 
 It stores and accesses data using Mongoose connected to MongoDB via Atlas, and embraces Model-View-Controller architecture.
 
 ## Endpoints -- RESTful routes
+Base API URL: https://sag-vouchers-back-end.onrender.com
 * GET '/vouchers' --returns all stored vouchers
 * POST '/vouchers' --creates a new voucher
 * GET '/vouchers/new' --currently returns placeholder text. Actual 'new' view handled by front-end

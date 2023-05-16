@@ -16,7 +16,7 @@ https://github.com/Bones81/SAGVouchers-Front-End
 * dotenv
 
 ## Description
-This back end app serves JSON data to https://sag-voucher-front-end.herokuapp.com/, an app which enables users to calculate how much they should earn when working as a SAG-AFTRA background performer (i.e. an extra) on a primetime television show or feature film in the NYC tv/film region. 
+This back end app serves JSON data to https://bones81.github.io/SAGVouchers-Front-End/, an app which enables users to calculate how much they should earn when working as a SAG-AFTRA background performer (i.e. an extra) on a primetime television show or feature film in the NYC tv/film region. 
 
 When you work as an extra, you fill out a _voucher_ that records all the relevant data that affects the amount you earn: call time, out time, meal breaks, your base rate, night work premiums, bumps, etc.
 

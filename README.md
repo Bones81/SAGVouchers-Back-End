@@ -2,7 +2,7 @@
 Express back end for SAG Vouchers app
 
 ## Link to live site
-https://sag-voucher-front-end.herokuapp.com/
+https://bones81.github.io/SAGVouchers-Front-End/
 
 ## Link to front end repo
 https://github.com/Bones81/SAGVouchers-Front-End
